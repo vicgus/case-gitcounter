@@ -1,0 +1,78 @@
+div {
+    border: 20px;
+    width: 820px;
+    margin: auto;
+    line-height: 500px;
+}
+
+.button {
+    border: 20px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 28px;
+    border-radius: 40px;
+    margin: auto;
+    width: 300px;
+    outline: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.button1 {
+    background-color: white;
+    color: black;
+    border-color: black;
+    border: 2px;
+    border-style: solid;
+}
+
+.button1:hover {
+    background-color: black;
+    color: white;
+    border-color: black;
+    transition: 0.4s;
+}
+
+.button2 {
+    background-color: hotpink;
+    color: white;
+    border: 2px;
+    border-style: solid;
+    border-color: hotpink;
+}
+
+.button2:hover {
+    background-color: rebeccapurple;
+    color: white;
+    border-color: rebeccapurple;
+    transition: 0.4s;
+}
+
+h1 {
+    display: inline-block;
+    padding: 20px;
+    margin: auto;
+    font-size: 28px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+img {
+    height: 20px;
+    margin-right: 20px;
+}
+
+img:hover {
+    transform: rotate(180deg);
+    transition: all 0.4s ease-in-out 0s;
+}
+
+.img-a {
+    height: 20px;
+    margin-right: 20px;
+}
+
+.img-a:hover {
+    transform: rotate(180deg);
+    transition: all 0.4s ease-in-out 0s;
+    filter: invert(100%);
+}
