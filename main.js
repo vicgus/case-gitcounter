@@ -4,13 +4,13 @@ document.getElementById('getCount')
 
 function increment() {
     count += 1;
-    document.getElementById("counter").innerHTML = "Counter: " + count;
+    document.getElementById("counter").innerHTML = `Counter: ${count}`;
     getCount();
 }
 
 function decrement() {
     count -= 1;
-    document.getElementById("counter").innerHTML = "Counter: " + count;
+    document.getElementById("counter").innerHTML = `Counter: ${count}`;
     getCount();
 }
 
@@ -27,18 +27,19 @@ let gitArray = [
 
 function getCount() {
 
-    fetch(`https://api.github.com/repos/${gitArray[count-1]}`)
+    fetch(`https://api.github.com/repos/${gitArray[count]}`)
     .then(function(res) {
         return res.json();
     })
     .then(function(json) {
-        document.getElementById('full_name').innerHTML = json.full_name;
-        document.getElementById('description').innerHTML = json.description;
-        document.getElementById('stargazers_count').innerHTML = json.stargazers_count;
+        document.getElementById('full_name').innerHTML = `Name | ${json.full_name}`;
+        document.getElementById('description').innerHTML = `Description | ${json.description}`;
+        document.getElementById('stargazers_count').innerHTML = `Stargazers count | ${json.stargazers_count}`;
         console.log(json.full_name, json.description, json.stargazers_count);
     })
     .catch((err) => {
         console.log('ERROR', err.message);
+        document.getElementById('err_mess').innerHTML = `${json.full_name} Repository not found`;
     })
     ;
     console.log(count);

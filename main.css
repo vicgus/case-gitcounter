@@ -1,8 +1,20 @@
+
 div {
     border: 20px;
     width: 820px;
     margin: auto;
-    line-height: 500px;
+    line-height: 300px;
+    display: flex;
+}
+
+.infodiv {
+    border: 20px;
+    width: 820px;
+    line-break: auto;
+    margin-bottom: 10px;
+    line-height: 30px;
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 .button {
@@ -75,4 +87,8 @@ img:hover {
     transform: rotate(180deg);
     transition: all 0.4s ease-in-out 0s;
     filter: invert(100%);
+}
+
+p {
+    display: inline-block;
 }

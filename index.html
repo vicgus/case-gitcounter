@@ -3,19 +3,21 @@
     <head>
         <link rel="stylesheet" href="main.css"/>
         <script src="main.js"></script>
+        <title>GitCounter</title>
         <!-- url -u "vicgus" https://api.github.com -->
     </head>
     <body>
-        <div class="container">
+        <div>
             <button class="button button1" onclick="decrement()"><img src="svgs/minus.svg" class="img img-a"/>DECREMENT</button>
             <h1 id="counter">Counter: 0</h1>
             <button class="button button2" onClick="increment()"><img src="svgs/whplus.svg"/>INCREMENT</button>
         </div>
-        <div>
-            <p id="full_name"></p>
-            <p id="description"></p>
-            <p id="stargazers_count"></p>
-        </div>
+        <div class="infodiv" id="full_name">Full name | </div>
+        <div class="infodiv" id="stargazers_count">Amount of stars | </div>
+        <div class="infodiv" id="description">Description | </div>
+        <!-- <div id="full_name" class="infobox">Name: </div>
+        <div id="description" class="infobox">Description: </div>
+        <div id="stargazers_count" class="infobox">Stargazers count: </div> -->
     </body>
 </html> 
 
