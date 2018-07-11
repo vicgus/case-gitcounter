@@ -2,18 +2,21 @@ let count = 0;
 
 document.getElementById('getCount');
 
+// Gets called when increment is clicked. Function increments the counter and calls the getCount() with new count.
 function increment() {
     count += 1;
     document.getElementById("counter").innerHTML = `Counter: ${count}`;
     getCount();
 }
 
+// Gets called when decrement is clicked. Decrements the counter and calls getCount() with new count.
 function decrement() {
     count -= 1;
     document.getElementById("counter").innerHTML = `Counter: ${count}`;
     getCount();
 }
 
+// Array of repositories.
 let gitArray = [
     'eslint/eslint',
     'oakwood/front-end-questions',
@@ -25,8 +28,10 @@ let gitArray = [
     'expressjs/express'
   ];
 
-
-
+// Fetch api from github with corresponding count-index from gitArray.
+// First if-condition handles error when repository in gitArray does not exist on github.
+// Second if-condition handles error when count-index is out of bounds in regards to gitArray.
+// Else-condition returns json from github api. 
 function getCount() {
     fetch(`https://api.github.com/repos/${gitArray[count]}`)
     .then(function(response) {

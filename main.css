@@ -66,25 +66,3 @@ h1 {
     font-size: 28px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
-
-img {
-    height: 20px;
-    margin-right: 20px;
-}
-
-img:hover {
-    transform: rotate(180deg);
-    transition: all 0.4s ease-in-out 0s;
-}
-
-.img-a {
-    height: 20px;
-    margin-right: 20px;
-}
-
-.img-a:hover {
-    transform: rotate(180deg);
-    transition: all 0.4s ease-in-out 0s;
-    filter: invert(100%);
-}
-
