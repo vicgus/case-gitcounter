@@ -57,4 +57,3 @@ function getCount() {
     ;
     console.log(count);
 }
-

@@ -6,7 +6,7 @@ div {
     display: flex;
 }
 
-.infodiv {
+.info_div {
     border: 20px;
     width: 820px;
     line-break: auto;
