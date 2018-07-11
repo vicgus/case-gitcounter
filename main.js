@@ -25,66 +25,58 @@ let gitArray = [
     'expressjs/express'
   ];
 
-function getCount() {
 
+
+function getCount() {
     fetch(`https://api.github.com/repos/${gitArray[count]}`)
-    .then(function(res) {
-        return res.json();
+    .then(function(response) {
+        if (response.status !== 200 && count > 0 && count < gitArray.length) {
+            alert(`There is no github repository matching ${gitArray[count]}`)
+            throw new Error("Not 200 response")
+        } else if (count < 0 || count > gitArray.length-1) {
+            alert(`There is no index in database matching number ${count}. Index goes from 0 to ${gitArray.length-1}`)
+            throw new Error("Not 200 response")
+        } else {
+            return response.json();
+        } 
     })
     .then(function(json) {
-        document.getElementById('full_name').innerHTML = `Name | ${json.full_name}`;
-        document.getElementById('description').innerHTML = `Description | ${json.description}`;
-        document.getElementById('stargazers_count').innerHTML = `Stargazers count | ${json.stargazers_count}`;
+        document.getElementById('fullName').innerHTML = `FULL NAME | ${json.full_name}`;
+        document.getElementById('description').innerHTML = `DESCRIPTION | ${json.description}`;
+        document.getElementById('stargazersCount').innerHTML = `AMOUNT OF STARS | ${json.stargazers_count}`;
         console.log(json.full_name, json.description, json.stargazers_count);
     })
-    .catch((err) => {
-        console.log('ERROR', err.message);
-        document.getElementById('err_mess').innerHTML = `${json.full_name} Repository not found`;
+    .catch((error) => {
+        console.log('ERROR', error.message);
     })
     ;
     console.log(count);
 }
 
 
-
-
-
-
-
-
-
-// for(let i=0; i < gitArray.length; i++)
-//     fetch(`https://api.github.com/repos/${gitArray[i]}`)
-//     .then(function(res) {
-//         return res.json();
-//     })
-//     .then(function(data) {
-//         document.getElementById('output').innerHTML = data;
-//         console.log(data);
-//     })
-//     .catch((err) => {
-//         console.log('ERROR', err.message);
-//     })
-//     ;
-
-
-
-
-
-// for(let i=0; i < gitArray.length; i++)
-//     fetch(`https://api.github.com/repos/${gitArray[i]}`)
+// function getCount() {
+//     fetch(`https://api.github.com/repos/${gitArray[count]}`)
 //     .then(function(res) {
 //         return res.json();
 //     })
 //     .then(function(json) {
-//         document.getElementById('output').innerHTML = json;
+//         if (count < 0) {
+//             alert("No no")
+//         } else if (count > gitArray.length - 1) {
+//             alert("Counter exceeds number of repositories in this")
+//         } else if (json.full_name == "undefined") {
+//             alert("error 404");
+//         } else {
+//         document.getElementById('fullName').innerHTML = `FULL NAME | ${json.full_name}`;
+//         document.getElementById('description').innerHTML = `DESCRIPTION | ${json.description}`;
+//         document.getElementById('stargazersCount').innerHTML = `AMOUNT OF STARS | ${json.stargazers_count}`;
 //         console.log(json.full_name, json.description, json.stargazers_count);
-//         const returnedArray = [json.full_name, json.description, json.stargazers_count];
-//         console.log(returnedArray);
-//         return returnedArray;
-//         document.getElementById("repo").innerHTML = json.full_name, json.description, json.stargazers_count;
+//     }
 //     })
-//     .catch((err) => {
-//         console.log('ERROR', err.message);
+//     .catch((error) => {
+//         console.log('ERROR', error.message);
 //     })
 //     ;
+//     console.log(count);
+// }
+
