@@ -28,7 +28,7 @@ let gitArray = [
     'expressjs/express'
   ];
 
-// Fetch api from github with corresponding count-index from gitArray.
+// getCount() fetches from github api with corresponding count-index from gitArray.
 // First if-condition handles error when repository in gitArray does not exist on github.
 // Second if-condition handles error when count-index is out of bounds in regards to gitArray.
 // Else-condition returns json from github api. 
