@@ -1,6 +1,6 @@
 let count = 0;
 
-document.getElementById('getCount')
+document.getElementById('getCount');
 
 function increment() {
     count += 1;
@@ -31,10 +31,10 @@ function getCount() {
     fetch(`https://api.github.com/repos/${gitArray[count]}`)
     .then(function(response) {
         if (response.status !== 200 && count > 0 && count < gitArray.length) {
-            alert(`There is no github repository matching ${gitArray[count]}`)
+            alert(`There is no github repository matching "${gitArray[count]}".`)
             throw new Error("Not 200 response")
         } else if (count < 0 || count > gitArray.length-1) {
-            alert(`There is no index in database matching number ${count}. Index goes from 0 to ${gitArray.length-1}`)
+            alert(`There is no index in database matching number ${count}. Index goes from 0 to ${gitArray.length-1}.`)
             throw new Error("Not 200 response")
         } else {
             return response.json();
@@ -52,31 +52,4 @@ function getCount() {
     ;
     console.log(count);
 }
-
-
-// function getCount() {
-//     fetch(`https://api.github.com/repos/${gitArray[count]}`)
-//     .then(function(res) {
-//         return res.json();
-//     })
-//     .then(function(json) {
-//         if (count < 0) {
-//             alert("No no")
-//         } else if (count > gitArray.length - 1) {
-//             alert("Counter exceeds number of repositories in this")
-//         } else if (json.full_name == "undefined") {
-//             alert("error 404");
-//         } else {
-//         document.getElementById('fullName').innerHTML = `FULL NAME | ${json.full_name}`;
-//         document.getElementById('description').innerHTML = `DESCRIPTION | ${json.description}`;
-//         document.getElementById('stargazersCount').innerHTML = `AMOUNT OF STARS | ${json.stargazers_count}`;
-//         console.log(json.full_name, json.description, json.stargazers_count);
-//     }
-//     })
-//     .catch((error) => {
-//         console.log('ERROR', error.message);
-//     })
-//     ;
-//     console.log(count);
-// }
 
